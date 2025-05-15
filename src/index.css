@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient {
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.hero-photo {
+  animation: float 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.party-mode .hero-photo {
+  animation: 
+    float 3s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+    spin 20s linear infinite;
+}
+
+.polaroid {
+  @apply bg-white dark:bg-gray-800 p-2 pb-8 shadow-lg relative;
+  transform-origin: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.polaroid::after {
+  content: '';
+  @apply absolute bottom-3 left-1/2 transform -translate-x-1/2 w-10 h-1 bg-gray-100 dark:bg-gray-700;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.floating-balloon {
+  @apply fixed w-16 h-20 rounded-full opacity-80;
+  animation: float 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  bottom: -100px;
+  z-index: 10;
+}
+
+.party-mode .floating-balloon {
+  animation-duration: 4s;
+}
+
+.sparkle {
+  @apply absolute w-4 h-4 rounded-full bg-yellow-300 dark:bg-purple-300 opacity-80 pointer-events-none;
+  animation: fadeIn 0.2s ease-out forwards, float 1s ease-out forwards;
+}
+
+.timeline-dot {
+  @apply absolute w-4 h-4 bg-pink-500 dark:bg-pink-400 rounded-full;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-line {
+  @apply absolute h-1 bg-pink-400 dark:bg-pink-300;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.birthday-cake {
+  @apply fixed bottom-4 right-4 p-4 bg-white dark:bg-gray-800 rounded-full shadow-lg cursor-pointer;
+  animation: bounce 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 50;
+}
+
+.birthday-cake:hover {
+  animation: wiggle 0.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.timeline-photo {
+  animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+}
+
+.timeline-photo:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.timeline-photo:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.timeline-photo:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Background pattern */
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fd96b9' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Make sure photos look better when they're constrained */
+img {
+  object-fit: cover;
+}
