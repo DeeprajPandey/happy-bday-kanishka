@@ -64,13 +64,13 @@ export const TIMELINE_PHOTOS = [
     id: 1,
     url: '/happy-bday-kanishka/k012.jpeg',
     caption: 'the one where kanishk looks out',
-    year: '2019',
+    year: '2000+delta... time is a construct',
   },
   {
     id: 2,
     url: '/happy-bday-kanishka/k010.jpeg',
     caption: 'look how far we have come',
-    year: '2022',
+    year: '2022+theta...',
   },
   {
     id: 3,
