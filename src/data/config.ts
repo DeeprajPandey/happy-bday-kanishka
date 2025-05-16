@@ -1,59 +1,60 @@
 export const BIRTHDAY_PERSON = 'Kanishka';
 
-export const YOUTUBE_MUSIC_URL = 'https://youtu.be/o_1aF54DO60'; // Young and Beautiful by Lana Del Rey
+export const YOUTUBE_MUSIC_URL = 'https://www.youtube.com/embed/o_1aF54DO60'; // Young and Beautiful by Lana Del Rey
+export const YOUTUBE_TITLE = 'Lana Del Rey - Young and Beautiful';
 
 export const HERO_PHOTO = {
-  url: '/k001.jpeg',
+  url: '/happy-bday-kanishka/k001.jpeg',
   caption: 'Happy Birthday to notkanishk! * meow *',
 };
 
 export const COLLAGE_PHOTOS = [
   {
     id: 1,
-    url: '/k002.jpeg',
-    caption: 'Remember that incredible sunset?',
+    url: '/happy-bday-kanishka/k002.jpeg',
+    caption: 'here\'s a u pointing at that stream',
     rotation: '-15deg',
   },
   {
     id: 2,
-    url: '/k003.jpeg',
-    caption: 'City adventures with you are the best!',
+    url: '/happy-bday-kanishka/k003.jpeg',
+    caption: 'the OG sass 💅',
     rotation: '8deg',
   },
   {
     id: 3,
-    url: '/k004.jpeg',
-    caption: 'Coffee dates and deep talks',
+    url: '/happy-bday-kanishka/k004.jpeg',
+    caption: 'wayfarers have nothing to add when style game is already at a 100!',
     rotation: '-5deg',
   },
   {
     id: 4,
-    url: '/k005.jpeg',
-    caption: 'Beach days forever',
+    url: '/happy-bday-kanishka/k005.jpeg',
+    caption: 'Beach days forever...',
     rotation: '12deg',
   },
   {
     id: 5,
-    url: '/k006.jpeg',
-    caption: 'That time we got lost in the forest',
+    url: '/happy-bday-kanishka/k006.jpeg',
+    caption: 'venice *beach*',
     rotation: '-10deg',
   },
   {
     id: 6,
-    url: '/k007.jpeg',
-    caption: 'Concert nights and city lights',
+    url: '/happy-bday-kanishka/k007.jpeg',
+    caption: 'burn baby burnnn',
     rotation: '7deg',
   },
   {
     id: 7,
-    url: '/k008.jpeg',
-    caption: 'Sunrise hikes are our thing',
+    url: '/happy-bday-kanishka/k008.jpeg',
+    caption: 'home warming',
     rotation: '-8deg',
   },
   {
     id: 8,
-    url: '/k009.jpeg',
-    caption: 'Pizza nights and movie marathons',
+    url: '/happy-bday-kanishka/k009.jpeg',
+    caption: 'and dapper nights',
     rotation: '10deg',
   },
 ];
@@ -61,19 +62,19 @@ export const COLLAGE_PHOTOS = [
 export const TIMELINE_PHOTOS = [
   {
     id: 1,
-    url: '/k012.jpeg',
-    caption: 'Where it all began - 5 years ago',
+    url: '/happy-bday-kanishka/k012.jpeg',
+    caption: 'the one where kanishk looks out',
     year: '2019',
   },
   {
     id: 2,
-    url: '/k010.jpeg',
-    caption: "Look how far we've come",
+    url: '/happy-bday-kanishka/k010.jpeg',
+    caption: 'look how far we have come',
     year: '2022',
   },
   {
     id: 3,
-    url: '/k011.jpeg',
+    url: '/happy-bday-kanishka/k011.jpeg',
     caption: "Here's to many more years!",
     year: '2025',
   },
