@@ -33,31 +33,31 @@ const Hero: React.FC<HeroProps> = ({ partyMode }) => {
   return (
     <section className="min-h-[80vh] flex flex-col items-center justify-center relative mb-24">
       {showConfetti && <Confetti />}
-      
-      <h1 className={`text-4xl md:text-6xl lg:text-7xl text-center font-bold mb-8 text-pink-800 
+
+      <h1 className={`text-4xl md:text-6xl lg:text-7xl text-center font-bold mb-8 text-pink-800
         ${isFullyVisible ? 'animate-bounce' : ''}`}>
         {visibleText}
         <span className="animate-pulse">|</span>
       </h1>
-      
-      <div 
+
+      <div
         className="hero-photo max-w-md mx-auto polaroid cursor-pointer"
         onClick={handlePhotoClick}
         style={{ transform: `rotate(${partyMode ? '5deg' : '0deg'})` }}
       >
-        <img 
-          src={HERO_PHOTO.url} 
-          alt="Birthday Hero" 
+        <img
+          src={HERO_PHOTO.url}
+          alt="Birthday Hero"
           className="w-full h-auto"
         />
         <p className="text-center mt-2 font-handwriting text-lg text-gray-700">
           {HERO_PHOTO.caption}
         </p>
       </div>
-      
+
       <div className="mt-8 text-center">
         <p className="text-xl text-pink-800 opacity-0 animate-fadeIn" style={{ animationDelay: '1.5s', animationFillMode: 'forwards' }}>
-          Today is all about you!
+          meow meow.. meowmeow... 🐱
         </p>
         <p className="text-lg text-pink-700 mt-2 opacity-0 animate-fadeIn" style={{ animationDelay: '2s', animationFillMode: 'forwards' }}>
           Click the photo for a surprise!

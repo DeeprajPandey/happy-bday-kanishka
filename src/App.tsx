@@ -23,18 +23,18 @@ function App() {
     // Add sparkle effect to cursor
     const handleMouseMove = (e: MouseEvent) => {
       if (!partyMode) return;
-      
+
       const sparkle = document.createElement('div');
       sparkle.className = 'sparkle';
       sparkle.style.left = `${e.pageX}px`;
       sparkle.style.top = `${e.pageY}px`;
       document.body.appendChild(sparkle);
-      
+
       setTimeout(() => {
         sparkle.remove();
       }, 1000);
     };
-    
+
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [partyMode]);
@@ -53,51 +53,46 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-all duration-1000 ${
-      darkMode 
-        ? 'bg-gradient dark:from-purple-900 dark:via-pink-900 dark:to-indigo-900 text-gray-100' 
-        : 'bg-gradient from-pink-300 via-orange-200 to-yellow-200 text-gray-900'
-    } ${partyMode ? 'party-mode' : ''}`}>
+    <div className={`min-h-screen transition-all duration-1000 ${darkMode
+      ? 'bg-gradient dark:from-purple-900 dark:via-pink-900 dark:to-indigo-900 text-gray-100'
+      : 'bg-gradient from-pink-300 via-orange-200 to-yellow-200 text-gray-900'
+      } ${partyMode ? 'party-mode' : ''}`}>
       <div className={`opacity-0 transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : ''}`}>
-        <header className={`sticky top-0 z-50 px-4 py-3 backdrop-blur-sm ${
-          darkMode ? 'bg-gray-900/30' : 'bg-white/30'
-        } flex justify-between items-center shadow-sm`}>
+        <header className={`sticky top-0 z-50 px-4 py-3 backdrop-blur-sm ${darkMode ? 'bg-gray-900/30' : 'bg-white/30'
+          } flex justify-between items-center shadow-sm`}>
           <h2 className={`text-xl font-bold ${darkMode ? 'text-pink-300' : 'text-pink-800'}`}>
             <Cake className="inline-block mr-2" size={24} />
             Happy Birthday {BIRTHDAY_PERSON}!
           </h2>
           <div className="flex gap-3">
-            <button 
-              onClick={toggleDarkMode} 
-              className={`p-2 rounded-full transition-colors ${
-                darkMode 
-                  ? 'bg-gray-800 text-yellow-300 hover:bg-gray-700' 
-                  : 'bg-white/50 hover:bg-white/80'
-              }`}
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2 rounded-full transition-colors ${darkMode
+                ? 'bg-gray-800 text-yellow-300 hover:bg-gray-700'
+                : 'bg-white/50 hover:bg-white/80'
+                }`}
               aria-label={darkMode ? "Light mode" : "Dark mode"}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button 
-              onClick={toggleMuted} 
-              className={`p-2 rounded-full transition-colors ${
-                darkMode 
-                  ? 'bg-gray-800 hover:bg-gray-700' 
-                  : 'bg-white/50 hover:bg-white/80'
-              }`}
+            <button
+              onClick={toggleMuted}
+              className={`p-2 rounded-full transition-colors ${darkMode
+                ? 'bg-gray-800 hover:bg-gray-700'
+                : 'bg-white/50 hover:bg-white/80'
+                }`}
               aria-label={muted ? "Unmute" : "Mute"}
             >
               {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
             </button>
-            <button 
-              onClick={togglePartyMode} 
-              className={`flex items-center gap-2 px-3 py-2 rounded-full transition-colors ${
-                partyMode 
-                  ? 'bg-purple-500 text-white' 
-                  : darkMode 
-                    ? 'bg-gray-800 hover:bg-gray-700' 
-                    : 'bg-white/50 hover:bg-white/80'
-              }`}
+            <button
+              onClick={togglePartyMode}
+              className={`flex items-center gap-2 px-3 py-2 rounded-full transition-colors ${partyMode
+                ? 'bg-purple-500 text-white'
+                : darkMode
+                  ? 'bg-gray-800 hover:bg-gray-700'
+                  : 'bg-white/50 hover:bg-white/80'
+                }`}
             >
               <Party size={20} />
               <span className="hidden sm:inline">Party Mode</span>
@@ -118,7 +113,9 @@ function App() {
         <footer className={`text-center py-8 ${darkMode ? 'text-pink-300' : 'text-pink-800'}`}>
           <p className="flex justify-center items-center gap-2">
             <Gift size={20} />
-            <span>Made with love for {BIRTHDAY_PERSON}'s special day!</span>
+            <span>(C) 1998</span>
+            <br />
+            <span>Made with &#9829; for {BIRTHDAY_PERSON}'s special day!</span>
           </p>
         </footer>
       </div>
