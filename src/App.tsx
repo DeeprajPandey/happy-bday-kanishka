@@ -24,15 +24,47 @@ function App() {
     const handleMouseMove = (e: MouseEvent) => {
       if (!partyMode) return;
 
-      const sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = `${e.pageX}px`;
-      sparkle.style.top = `${e.pageY}px`;
-      document.body.appendChild(sparkle);
+      // Create multiple particles for a more dynamic trail
+      const numParticles = 3;
 
-      setTimeout(() => {
-        sparkle.remove();
-      }, 1000);
+      for (let i = 0; i < numParticles; i++) {
+        setTimeout(() => {
+          const sparkle = document.createElement('div');
+
+          // Random particle types for variety
+          const particleTypes = ['sparkle', 'heart', 'star'];
+          const randomType = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+
+          sparkle.className = `cursor-particle ${randomType}`;
+
+          // Add slight random offset for more natural look
+          const offsetX = (Math.random() - 0.5) * 30;
+          const offsetY = (Math.random() - 0.5) * 30;
+
+          sparkle.style.left = `${e.pageX + offsetX}px`;
+          sparkle.style.top = `${e.pageY + offsetY}px`;
+
+          // Random size variations
+          const size = Math.random() * 20 + 10;
+          sparkle.style.width = `${size}px`;
+          sparkle.style.height = `${size}px`;
+
+          // Different colors for light and dark mode
+          const lightModeColors = ['#FF69B4', '#FFD700', '#FF1493', '#00CED1', '#FF6347', '#9370DB'];
+          const darkModeColors = ['#FF91D1', '#FFED4E', '#FF59A8', '#4DD0E1', '#FF8A65', '#B39DDB'];
+
+          const colors = darkMode ? darkModeColors : lightModeColors;
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          sparkle.style.backgroundColor = randomColor;
+
+          document.body.appendChild(sparkle);
+
+          // Staggered removal for smoother trail
+          setTimeout(() => {
+            sparkle.remove();
+          }, 800 + Math.random() * 400);
+        }, i * 50); // Stagger creation of particles
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
