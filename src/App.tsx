@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Cake, Gift, Music, PartyPopper as Party, Volume2, VolumeX, Moon, Sun } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Cake, Gift, PartyPopper as Party, Volume2, VolumeX, Moon, Sun } from 'lucide-react';
 import Hero from './components/Hero';
 import PhotoCollage from './components/PhotoCollage';
 import Timeline from './components/Timeline';
