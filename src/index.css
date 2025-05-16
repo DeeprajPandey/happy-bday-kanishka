@@ -9,9 +9,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -21,15 +24,19 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
     transform: translateY(-20px) scale(1.05);
   }
@@ -39,6 +46,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -49,6 +57,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -56,9 +65,12 @@
 }
 
 @keyframes wiggle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(-3deg);
   }
+
   50% {
     transform: rotate(3deg);
   }
@@ -68,9 +80,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -87,7 +101,7 @@
 }
 
 .party-mode .hero-photo {
-  animation: 
+  animation:
     float 3s cubic-bezier(0.4, 0, 0.2, 1) infinite,
     spin 20s linear infinite;
 }
@@ -163,6 +177,70 @@
 
 .timeline-photo:nth-child(3) {
   animation-delay: 0.6s;
+}
+
+
+@keyframes balloonFloat {
+  0% {
+    transform: translateY(calc(100vh + 100px)) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-200px) translateX(10px) rotate(5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+
+  50% {
+    transform: translateY(0px) translateX(-10px);
+  }
+
+  75% {
+    transform: translateY(-15px) translateX(5px);
+  }
+}
+
+.floating-balloon {
+  position: fixed;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: balloonFloat 45s ease-out infinite;
+  z-index: 10;
+  box-shadow:
+    inset -10px -10px 0 rgba(0, 0, 0, 0.1),
+    inset 10px 10px 0 rgba(255, 255, 255, 0.3);
+}
+
+.balloon-string {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: #666;
+  left: 50%;
+  bottom: -60px;
+  transform: translateX(-50%);
+  border-radius: 1px;
 }
 
 /* Background pattern */
