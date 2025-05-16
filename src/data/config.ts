@@ -90,8 +90,8 @@ export const SECRET_MESSAGES = [
 ];
 
 export const PARTY_SOUNDS = {
-  confetti: '/sounds/confetti-pop.mp3',
-  birthday: '/sounds/happy-birthday.mp3',
-  click: '/sounds/click.mp3',
+  confetti: '/happy-bday-kanishka/sounds/confetti-pop.mp3',
+  birthday: '/happy-bday-kanishka/sounds/happy-birthday.mp3',
+  click: '/happy-bday-kanishka/sounds/click.mp3',
 };
 
