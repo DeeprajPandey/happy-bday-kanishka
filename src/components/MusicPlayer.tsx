@@ -4,9 +4,10 @@ import { YOUTUBE_MUSIC_ID, YOUTUBE_MUSIC_URL, YOUTUBE_TITLE } from '../data/conf
 
 interface MusicPlayerProps {
   muted: boolean;
+  onConsentGiven?: () => void;
 }
 
-const MusicPlayer: React.FC<MusicPlayerProps> = ({ muted }) => {
+const MusicPlayer: React.FC<MusicPlayerProps> = ({ muted, onConsentGiven }) => {
   const playerRef = useRef<HTMLDivElement>(null);
   const [showConsentModal, setShowConsentModal] = useState(true);
   const [userConsented, setUserConsented] = useState(false);
@@ -16,8 +17,10 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ muted }) => {
   const handleConsent = (consent: boolean) => {
     setUserConsented(consent);
     setShowConsentModal(false);
-    if (consent && !muted) {
+    if (consent) {
       setIsPlaying(true);
+      // Automatically unmute when user gives consent
+      onConsentGiven?.();
     }
   };
 

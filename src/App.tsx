@@ -140,7 +140,7 @@ function App() {
 
         <FloatingElements partyMode={partyMode} />
         <ConfettiButton />
-        <MusicPlayer muted={muted} />
+        <MusicPlayer muted={muted} onConsentGiven={() => setMuted(false)} />
 
         <footer className={`text-center py-8 ${darkMode ? 'text-pink-300' : 'text-pink-800'}`}>
           <p className="flex justify-center items-center gap-2">
