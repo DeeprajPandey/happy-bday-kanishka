@@ -1,5 +1,6 @@
 export const BIRTHDAY_PERSON = 'Kanishka';
 
+export const YOUTUBE_MUSIC_ID = 'o_1aF54DO60'; // Young and Beautiful by Lana Del Rey
 export const YOUTUBE_MUSIC_URL = 'https://www.youtube.com/embed/o_1aF54DO60'; // Young and Beautiful by Lana Del Rey
 export const YOUTUBE_TITLE = 'Lana Del Rey - Young and Beautiful';
 
